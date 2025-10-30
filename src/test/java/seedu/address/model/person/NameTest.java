@@ -56,5 +56,10 @@ public class NameTest {
 
         // different values -> returns false
         assertFalse(name.equals(new Name("Other Valid Name")));
+
+        // same name with extra spaces -> returns true
+        assertTrue(name.equals(new Name("Valid  Name"))); // two spaces
+        assertTrue(name.equals(new Name("Valid   Name"))); // three spaces
+        assertTrue(new Name("john doe").equals(new Name("john  doe"))); // issue example
     }
 }
